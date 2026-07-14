@@ -1,0 +1,9 @@
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.csproj.AssemblyReference.cache
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/rpswa.dswa.cache.json
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.GeneratedMSBuildEditorConfig.editorconfig
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.AssemblyInfoInputs.cache
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.AssemblyInfo.cs
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.csproj.CoreCompileInputs.cache
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.MvcApplicationPartsAssemblyInfo.cs
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.MvcApplicationPartsAssemblyInfo.cache
+/Users/javedahmed/workspace/Othello/OthelloAPI/obj/Debug/net10.0/OthelloAPI.sourcelink.json
