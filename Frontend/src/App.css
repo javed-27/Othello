@@ -1,8 +1,157 @@
 .app {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
   padding: 20px;
 }
 
-.app h1 {
-  color: #333;
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.header h1 {
+  font-size: 2rem;
+  color: #e0e0e0;
+}
+
+.restart-button {
+  padding: 8px 20px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #e94560;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.restart-button:hover {
+  background-color: #c73650;
+}
+
+/* Scoreboard */
+.scoreboard {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.score {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.1rem;
+  padding: 6px 14px;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.score.active {
+  box-shadow: 0 0 0 2px #e94560;
+}
+
+.score-disc {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.score-disc.black {
+  background: radial-gradient(circle at 35% 35%, #555, #111);
+}
+
+.score-disc.white {
+  background: radial-gradient(circle at 35% 35%, #fff, #bbb);
+  border: 1px solid #999;
+}
+
+/* Board */
+.board {
+  display: flex;
+  flex-direction: column;
+  border: 3px solid #0f3460;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.board-row {
+  display: flex;
+}
+
+.cell {
+  width: 56px;
+  height: 56px;
+  background-color: #1a7a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 1px solid #14612b;
+  transition: background-color 0.15s;
+}
+
+.cell:hover {
+  background-color: #1f8f45;
+}
+
+.cell.valid-move:hover {
+  background-color: #24a850;
+}
+
+/* Discs */
+.disc {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.disc.black {
+  background: radial-gradient(circle at 35% 35%, #555, #0a0a0a);
+}
+
+.disc.white {
+  background: radial-gradient(circle at 35% 35%, #fff, #bbb);
+  border: 2px solid #999;
+}
+
+.disc.hint {
+  width: 16px;
+  height: 16px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Game Status */
+.game-status {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.game-status.game-over {
+  font-size: 1.3rem;
+  color: #e94560;
+  font-weight: bold;
+}
+
+.skip-message {
+  color: #e9a045;
+  margin-bottom: 4px;
+}
+
+/* Error / messages */
+.error-message {
+  margin-top: 12px;
+  color: #e94560;
+  font-size: 0.95rem;
+}
+
+.connection-error {
+  margin-top: 40px;
+  font-size: 1.2rem;
+  color: #e94560;
 }

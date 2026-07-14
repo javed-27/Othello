@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using OthelloAPI.Models;
+using OthelloAPI.DTOs;
+using OthelloAPI.Services;
 
 namespace OthelloAPI.Controllers;
 
@@ -7,41 +8,35 @@ namespace OthelloAPI.Controllers;
 [Route("api/[controller]")]
 public class GameController : ControllerBase
 {
+    private readonly IGameService _gameService;
+
+    public GameController(IGameService gameService)
+    {
+        _gameService = gameService;
+    }
+
     [HttpGet("new")]
     public IActionResult NewGame()
     {
-        // Create new game board with initial position
-        var board = new Cell[8, 8];
-        
-        // Initialize empty board
-        for (int row = 0; row < 8; row++)
-        {
-            for (int col = 0; col < 8; col++)
-            {
-                board[row, col] = new Cell();
-            }
-        }
-        
-        // Set up initial position with the correct starting layout
-        // The starting layout is:
-        // ........
-        // ........
-        // ........
-        // ...WB...
-        // ...BW...
-        // ........
-        // ........
-        // ........
+        var response = _gameService.CreateNewGame();
+        return Ok(response);
+    }
 
-        board[3, 3].Value = Player.White;
-        board[3, 4].Value = Player.Black;
-        board[4, 3].Value = Player.Black;
-        board[4, 4].Value = Player.White;
-        
-        return Ok(new
+    [HttpPost("move")]
+    public IActionResult MakeMove([FromBody] MoveRequest request)
+    {
+        try
         {
-            board = board,
-            currentPlayer = "Black"
-        });
+            var response = _gameService.MakeMove(request.Row, request.Column);
+            return Ok(response);
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (InvalidOperationException ex)
+        {
+            return BadRequest(new { error = ex.Message });
+        }
     }
 }

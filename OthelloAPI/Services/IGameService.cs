@@ -1,8 +1,9 @@
-using OthelloAPI.Models;
+using OthelloAPI.DTOs;
 
 namespace OthelloAPI.Services;
 
 public interface IGameService
 {
-    GameState CreateNewGame();
+    GameResponse CreateNewGame();
+    GameResponse MakeMove(int row, int column);
 }
