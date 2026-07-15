@@ -2,6 +2,8 @@
 
 A classic two-player strategy board game where you outmaneuver your opponent by flipping their discs to your color. Simple to learn, hard to master.
 
+![Othello Game Board](Othello.png)
+
 ---
 
 ## Quick Start
